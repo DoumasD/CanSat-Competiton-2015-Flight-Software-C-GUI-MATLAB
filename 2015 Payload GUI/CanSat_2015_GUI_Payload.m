@@ -1,11 +1,11 @@
 % Demetrios Doumas Head Programmer   1/24/15
 % http://www.eltima.com/products/vspdxp/ for debuging without electronics
-function varargout = cansat2015guidraft1(varargin)
+function varargout = CanSat_2015_GUI_Payload(varargin)
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @cansat2015guidraft1_OpeningFcn, ...
-                   'gui_OutputFcn',  @cansat2015guidraft1_OutputFcn, ...
+                   'gui_OpeningFcn', @CanSat_2015_GUI_Payload_OpeningFcn, ...
+                   'gui_OutputFcn',  @CanSat_2015_GUI_Payload_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -18,27 +18,27 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 
-function cansat2015guidraft1_OpeningFcn(hObject, eventdata, handles, varargin)
+function CanSat_2015_GUI_Payload_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 guidata(hObject, handles);
 
 
 
-function varargout = cansat2015guidraft1_OutputFcn(hObject, ~, handles) 
+function varargout = CanSat_2015_GUI_Payload_OutputFcn(hObject, ~, handles) 
 varargout{1} = handles.output;
 
-function pushb_Callback(hObject, eventdata, handles)
+function pushb_Callback(hObject, eventdata, handles)  % Start button
 global s;
 startplot=0;
-string=transmit;
 
-if (get(hObject,'Value'))
+
+if (get(hObject,'Value')) % Button is pressed
     
     set(handles.pushb, 'String', 'Stop Plot');
-    startplot = 1;
+    startplot = 1; 
    
     
-else
+else   % pressed again to stop
     try
     set(handles.pushb, 'String', 'Start Plot');
     delete(instrfindall) % delete all the hidden serial ports

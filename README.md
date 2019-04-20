@@ -50,9 +50,11 @@ Ground Station Software:
 
 This software is intended for windows OS.
 1.) Download the folder "2015 Payload GUI."
-2.) Open MATLAB and the "cansat2015guipayloaddraft1.m" file
-3.) Click run.
-Note: Make sure all files are in the same directory.
+2.) Open MATLAB and the "CanSat_2015_GUI_Payload.m" file
+3.) Click run. or
+4.) Run exe file "CanSat_2015_GUI_Payload.exe"
+
+Note: Make sure all files are in the same directory. If you run the exe file, verify that MATLAB Runtime is installed and ensure you have installed version 9.2 (R2017a) before you run the exe file.
 
 # Usage:
 
